@@ -1,0 +1,22 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/marcus/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "pyright@claude-code-lsps": true,
+    "vtsls@claude-code-lsps": true,
+    "rust-analyzer@claude-code-lsps": true,
+    "sourcekit-lsp@claude-code-lsps": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-code-lsps": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/Piebald-AI/claude-code-lsps.git"
+      }
+    }
+  },
+  "alwaysThinkingEnabled": true,
+  "skipDangerousModePermissionPrompt": true
+}
