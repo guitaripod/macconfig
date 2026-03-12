@@ -51,9 +51,7 @@ git push
 
 **Apps** (via Homebrew): Ghostty, Raycast, 1Password, Docker Desktop, Android Studio, Discord, Steam, Vivaldi, OBS, CleanShot X, Tailscale, Telegram, Flux, and more
 
-**Dev Tools**: Go, Node, Python, Swift, Rust, Bun, Deno, Zig, Neovim, Docker, Supabase, Google Cloud SDK
-
-**AI/ML Tools**: whisper-cpp, llama.cpp, tesseract
+**Dev Tools**: Go, Node, Python, Swift, Rust, Bun, Deno, Neovim, Docker, Supabase, Google Cloud SDK
 
 **System Settings**: Dock auto-hide, tap-to-click, column Finder, screenshots to ~/Pictures/Screenshots, Spotlight shortcut disabled (Raycast replaces it)
 
