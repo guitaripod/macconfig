@@ -1,6 +1,6 @@
 # macconfig
 
-macOS dotfiles and system configuration. Apple Silicon (M4 MacBook Air, Sequoia).
+macOS dotfiles and system configuration.
 
 ## Prerequisites
 
