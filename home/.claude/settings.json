@@ -1,4 +1,12 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(echo $PATH)",
+      "Bash(grep:*)"
+    ],
+    "deny": [],
+    "defaultMode": "default"
+  },
   "statusLine": {
     "type": "command",
     "command": "bash /Users/marcus/.claude/statusline-command.sh"
@@ -7,7 +15,9 @@
     "pyright@claude-code-lsps": true,
     "vtsls@claude-code-lsps": true,
     "rust-analyzer@claude-code-lsps": true,
-    "sourcekit-lsp@claude-code-lsps": true
+    "sourcekit-lsp@claude-code-lsps": true,
+    "swift-lsp@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "claude-code-lsps": {
@@ -18,5 +28,6 @@
     }
   },
   "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true
 }
