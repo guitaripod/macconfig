@@ -55,6 +55,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Silence bash deprecation warning
 export BASH_SILENCE_DEPRECATION_WARNING=1
+export MTL_HUD_ENABLED=1
 
 # PATH configuration
 export PATH="/usr/local/bin:$PATH:$HOME/go/bin"
@@ -129,3 +130,4 @@ alias vpnoff='sudo tailscale set --exit-node='
 
 # OpenCode
 alias oc='opencode'
+export PATH="$HOME/bin:$PATH"
