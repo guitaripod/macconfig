@@ -125,6 +125,7 @@ alias ccc="CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ENABLE_BACKGROUND_TASKS=1 
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 alias ccu="claude update"
 
+alias unlock='security unlock-keychain ~/Library/Keychains/login.keychain-db'
 alias vpnon='sudo tailscale set --exit-node=arch'
 alias vpnoff='sudo tailscale set --exit-node='
 
