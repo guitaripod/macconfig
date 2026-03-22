@@ -32,10 +32,10 @@ defaults write com.apple.dock show-recents -bool false
 # =============================================================================
 
 # Fast key repeat (lower = faster, default is 6)
-defaults write -g KeyRepeat -int 2
+defaults write -g KeyRepeat -int 1
 
 # Short delay before key repeat starts (lower = shorter, default is 25)
-defaults write -g InitialKeyRepeat -int 15
+defaults write -g InitialKeyRepeat -int 10
 
 # Disable press-and-hold for special characters (enables key repeat everywhere)
 defaults write -g ApplePressAndHoldEnabled -bool false
