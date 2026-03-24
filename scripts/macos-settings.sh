@@ -70,6 +70,22 @@ defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 # Mouse tracking speed (0.6875)
 defaults write -g com.apple.mouse.scaling -float 0.6875
 
+# Pointer size (3x default)
+defaults write com.apple.universalaccess mouseDriverCursorSize -float 3.0
+
+# Pointer color: yellow fill, black outline
+swift -e '
+import Cocoa
+let fill = NSColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)
+let outline = NSColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+let fillData = try NSKeyedArchiver.archivedData(withRootObject: fill, requiringSecureCoding: false)
+let outlineData = try NSKeyedArchiver.archivedData(withRootObject: outline, requiringSecureCoding: false)
+let ud = UserDefaults(suiteName: "com.apple.universalaccess")!
+ud.set(fillData, forKey: "pointerFillColor")
+ud.set(outlineData, forKey: "pointerOutlineColor")
+ud.synchronize()
+'
+
 # =============================================================================
 # MISC
 # =============================================================================
