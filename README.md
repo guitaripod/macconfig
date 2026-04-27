@@ -41,7 +41,7 @@ git push
 
 **Git**: aliases, rebase on pull, LFS
 
-**AI**: Claude Code with LSP plugins (pyright, vtsls, rust-analyzer, sourcekit-lsp), custom skills
+**AI**: Claude Code config lives in [claudeconfig](https://github.com/guitaripod/claudeconfig) (synced across machines)
 
 **Keyboard**: Karabiner (ctrl+hjkl vim arrows), fast key repeat, no press-and-hold
 
@@ -65,5 +65,6 @@ touch ~/.secrets && chmod 600 ~/.secrets
 ## Related Repos
 
 - [archconfig](https://github.com/guitaripod/archconfig) — Arch Linux dotfiles
+- [claudeconfig](https://github.com/guitaripod/claudeconfig) — Claude Code config (cross-platform)
 - [rawdog.ml.nvim](https://github.com/guitaripod/rawdog.ml.nvim) — Neovim config
 - [ghostty-config](https://github.com/guitaripod/ghostty-config) — Ghostty terminal config

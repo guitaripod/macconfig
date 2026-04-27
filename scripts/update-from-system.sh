@@ -36,13 +36,6 @@ sync_file .swift-format
 echo "SSH:"
 sync_file .ssh/config
 
-echo "Claude Code:"
-sync_file .claude/CLAUDE.md
-sync_file .claude/settings.json
-sync_file .claude/statusline-command.sh
-sync_file .claude/skills/video-comparison/SKILL.md
-sync_file .claude/skills/xcodebuild/SKILL.md
-
 echo "App configs:"
 sync_file .config/karabiner/karabiner.json
 sync_file .config/linearmouse/linearmouse.json
