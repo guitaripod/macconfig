@@ -63,6 +63,14 @@ link_file .config/btop/btop.conf
 link_file .config/gh/config.yml
 link_file .config/gh/hosts.yml
 
+echo "=== Cloning Neovim Config (rawdog.ml.nvim) ==="
+if [ -d "$HOME/.config/nvim/.git" ]; then
+    git -C "$HOME/.config/nvim" pull
+else
+    rm -rf "$HOME/.config/nvim"
+    git clone git@github.com:guitaripod/rawdog.ml.nvim.git "$HOME/.config/nvim"
+fi
+
 echo "=== Copying Configs (apps that overwrite symlinks) ==="
 copy_file "$HOME_DIR/.config/linearmouse/linearmouse.json" "$HOME/.config/linearmouse/linearmouse.json"
 
