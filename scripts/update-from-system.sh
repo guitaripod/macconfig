@@ -43,6 +43,9 @@ sync_file .config/btop/btop.conf
 sync_file .config/gh/config.yml
 sync_file .config/gh/hosts.yml
 
+echo "LaunchAgents:"
+sync_file Library/LaunchAgents/digital.twisted.noTunes.autostart.plist
+
 echo ""
 echo "Regenerating Brewfile..."
 brew bundle dump --force --file="$REPO_DIR/Brewfile"

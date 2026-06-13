@@ -45,6 +45,8 @@ git push
 
 **Keyboard**: Karabiner (ctrl+hjkl vim arrows), fast key repeat, no press-and-hold
 
+**Media keys**: noTunes LaunchAgent blocks Apple Music from auto-launching (built-in play/pause key, AirPods, Bluetooth)
+
 **Mouse**: LinearMouse (Logitech settings)
 
 **Window Management**: Rectangle

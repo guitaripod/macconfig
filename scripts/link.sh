@@ -63,6 +63,10 @@ link_file .config/btop/btop.conf
 link_file .config/gh/config.yml
 link_file .config/gh/hosts.yml
 
+echo "=== Linking LaunchAgents ==="
+link_file Library/LaunchAgents/digital.twisted.noTunes.autostart.plist
+launchctl bootstrap "gui/$(id -u)" "$HOME/Library/LaunchAgents/digital.twisted.noTunes.autostart.plist" 2>/dev/null || true
+
 echo "=== Cloning Neovim Config (rawdog.ml.nvim) ==="
 if [ -d "$HOME/.config/nvim/.git" ]; then
     git -C "$HOME/.config/nvim" pull
