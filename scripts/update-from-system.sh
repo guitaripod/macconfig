@@ -48,7 +48,7 @@ sync_file Library/LaunchAgents/digital.twisted.noTunes.autostart.plist
 
 echo ""
 echo "Regenerating Brewfile..."
-brew bundle dump --force --file="$REPO_DIR/Brewfile"
+brew bundle dump --force --no-describe --file="$REPO_DIR/Brewfile"
 echo "  Brewfile updated (review before committing)"
 
 echo ""
