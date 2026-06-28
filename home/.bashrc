@@ -55,7 +55,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Silence bash deprecation warning
 export BASH_SILENCE_DEPRECATION_WARNING=1
-export MTL_HUD_ENABLED=1
+# export MTL_HUD_ENABLED=1
 
 # PATH configuration
 export PATH="/usr/local/bin:$PATH:$HOME/go/bin"
@@ -95,6 +95,7 @@ alias c='clear'
 alias ise="xcrun simctl boot 'iPhone SE (3rd generation)'"
 alias sb='swift build'
 alias st='swift test'
+alias t='tmux new -A -s main'
 
 # Tuist
 alias ti='tuist install'
