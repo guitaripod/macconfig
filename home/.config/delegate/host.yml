@@ -13,3 +13,6 @@ tiers:
         health: http://127.0.0.1:11434/v1/models
         settings:
           temperature: 0
+
+server:
+  listen: 127.0.0.1:4100
