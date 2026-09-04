@@ -65,7 +65,6 @@ echo "=== Linking App Configs ==="
 link_file .config/karabiner/karabiner.json
 link_file .config/btop/btop.conf
 link_file .config/gh/config.yml
-link_file .config/gh/hosts.yml
 
 echo "=== Linking LaunchAgents ==="
 link_file Library/LaunchAgents/digital.twisted.noTunes.autostart.plist

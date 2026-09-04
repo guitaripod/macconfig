@@ -41,7 +41,6 @@ sync_file .config/karabiner/karabiner.json
 sync_file .config/linearmouse/linearmouse.json
 sync_file .config/btop/btop.conf
 sync_file .config/gh/config.yml
-sync_file .config/gh/hosts.yml
 
 echo "LaunchAgents:"
 sync_file Library/LaunchAgents/digital.twisted.noTunes.autostart.plist
