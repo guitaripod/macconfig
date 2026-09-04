@@ -50,12 +50,16 @@ link_file .swift-format
 echo "=== Linking SSH Config ==="
 link_file .ssh/config
 
-echo "=== Linking Claude Code ==="
-link_file .claude/CLAUDE.md
-link_file .claude/settings.json
-link_file .claude/statusline-command.sh
-link_file .claude/skills/video-comparison/SKILL.md
-link_file .claude/skills/xcodebuild/SKILL.md
+echo "=== Linking Claude Code (claudeconfig + macOS rules) ==="
+if [ -d "$HOME/claudeconfig/.git" ]; then
+    git -C "$HOME/claudeconfig" pull
+else
+    git clone git@github.com:guitaripod/claudeconfig.git "$HOME/claudeconfig"
+fi
+"$HOME/claudeconfig/scripts/link.sh"
+for rule in "$HOME_DIR"/.claude/rules/*.md; do
+    link_file ".claude/rules/$(basename "$rule")"
+done
 
 echo "=== Linking App Configs ==="
 link_file .config/karabiner/karabiner.json

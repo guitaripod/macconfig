@@ -41,7 +41,7 @@ git push
 
 **Git**: aliases, rebase on pull, LFS
 
-**AI**: Claude Code config lives in [claudeconfig](https://github.com/guitaripod/claudeconfig) (synced across machines)
+**AI**: Claude Code config lives in [claudeconfig](https://github.com/guitaripod/claudeconfig) (synced across machines); macOS-only rules in `home/.claude/rules/`, linked into `~/.claude/rules/`
 
 **Keyboard**: Karabiner (ctrl+hjkl vim arrows), fast key repeat, no press-and-hold
 
