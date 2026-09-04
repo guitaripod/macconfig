@@ -143,3 +143,6 @@ export PATH="$HOME/.grok/bin:$PATH"
 # <<< grok installer <<<
 
 export OPENCODE_CONFIG="$HOME/.config/opencode/opencode.local.json"
+
+# omp credentials come from the Arch auth-broker over the tailnet
+[ -f ~/.config/omp/broker.env ] && . ~/.config/omp/broker.env
