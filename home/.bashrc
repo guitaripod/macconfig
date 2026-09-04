@@ -126,10 +126,20 @@ alias ccc="CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ENABLE_BACKGROUND_TASKS=1 
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 alias ccu="claude update"
 
-alias unlock='security unlock-keychain ~/Library/Keychains/login.keychain-db'
+alias u='security unlock-keychain ~/Library/Keychains/login.keychain-db'
 alias vpnon='sudo tailscale set --exit-node=arch'
 alias vpnoff='sudo tailscale set --exit-node='
 
 # OpenCode
 alias oc='opencode'
 export PATH="$HOME/bin:$PATH"
+
+rtmux() { ssh -t "marcus@${1:?usage: rtmux <host> [session]}" "tmux new -A -s ${2:-main}"; }
+
+
+# >>> grok installer >>>
+export PATH="$HOME/.grok/bin:$PATH"
+[[ -r "$HOME/.grok/completions/bash/grok.bash" ]] && source "$HOME/.grok/completions/bash/grok.bash"
+# <<< grok installer <<<
+
+export OPENCODE_CONFIG="$HOME/.config/opencode/opencode.local.json"
