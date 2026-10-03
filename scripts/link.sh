@@ -65,6 +65,7 @@ echo "=== Linking App Configs ==="
 link_file .config/karabiner/karabiner.json
 link_file .config/btop/btop.conf
 link_file .config/delegate/host.yml
+link_file .config/opencode/opencode.local.json
 link_file .config/gh/config.yml
 
 echo "=== Linking LaunchAgents ==="
