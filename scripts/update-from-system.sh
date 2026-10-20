@@ -42,8 +42,12 @@ sync_file .config/linearmouse/linearmouse.json
 sync_file .config/btop/btop.conf
 sync_file .config/gh/config.yml
 
+echo "Local bins:"
+sync_file .local/bin/rc-tui-feed-sync
+
 echo "LaunchAgents:"
 sync_file Library/LaunchAgents/digital.twisted.noTunes.autostart.plist
+sync_file Library/LaunchAgents/com.marcus.rc-tui-feed-sync.plist
 
 echo ""
 echo "Regenerating Brewfile..."

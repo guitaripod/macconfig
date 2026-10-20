@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eu
+
+DEST="$HOME/.local/state/storebot"
+REMOTE="arch:/home/marcus/.local/state/storebot"
+
+mkdir -p "$DEST"
+exec rsync -a --timeout=20 \
+  -e "ssh -o BatchMode=yes -o ConnectTimeout=10" \
+  "$REMOTE/feed.json" "$REMOTE/feed.alive" "$DEST/"
