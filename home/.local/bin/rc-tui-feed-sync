@@ -1,10 +1,18 @@
 #!/bin/sh
 set -eu
 
-DEST="$HOME/.local/state/storebot"
-REMOTE="arch:/home/marcus/.local/state/storebot"
+SSH="ssh -o BatchMode=yes -o ConnectTimeout=10"
+FEED="$HOME/.local/state/storebot"
+MOMENTS="$HOME/.local/state/rc-tui"
+PICTURES="$HOME/Pictures"
+REMOTE_FEED="arch:/home/marcus/.local/state/storebot"
+REMOTE_MOMENTS="arch:/home/marcus/.local/state/rc-tui"
+REMOTE_CARDS="arch:/mnt/nvme8tb/Pictures/rc-tui-moments"
 
-mkdir -p "$DEST"
-exec rsync -a --timeout=20 \
-  -e "ssh -o BatchMode=yes -o ConnectTimeout=10" \
-  "$REMOTE/feed.json" "$REMOTE/feed.alive" "$DEST/"
+mkdir -p "$FEED" "$MOMENTS" "$PICTURES"
+rsync -a --timeout=20 -e "$SSH" \
+  "$REMOTE_FEED/feed.json" "$REMOTE_FEED/feed.alive" "$FEED/"
+rsync -a --timeout=20 --ignore-missing-args -e "$SSH" \
+  "$REMOTE_MOMENTS/moments.jsonl" "$MOMENTS/"
+exec rsync -a --timeout=20 --ignore-missing-args -e "$SSH" \
+  "$REMOTE_CARDS" "$PICTURES/"
