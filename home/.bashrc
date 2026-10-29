@@ -59,7 +59,6 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # PATH configuration
 export PATH="/usr/local/bin:$PATH:$HOME/go/bin"
-export PATH="$PATH:/usr/bin/sourcekit-lsp"
 export PATH="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
