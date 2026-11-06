@@ -8,11 +8,18 @@ PICTURES="$HOME/Pictures"
 REMOTE_FEED="arch:/home/marcus/.local/state/storebot"
 REMOTE_MOMENTS="arch:/home/marcus/.local/state/rc-tui"
 REMOTE_CARDS="arch:/mnt/nvme8tb/Pictures/rc-tui-moments"
+LIBRA="$HOME/.local/state/libra"
+REMOTE_LIBRA="arch:/home/marcus/.local/state/libra"
+REMOTE_LIBRA_CARDS="arch:/mnt/nvme8tb/Pictures/libra-moments"
 
-mkdir -p "$FEED" "$MOMENTS" "$PICTURES"
+mkdir -p "$FEED" "$MOMENTS" "$PICTURES" "$LIBRA"
 rsync -a --timeout=20 -e "$SSH" \
   "$REMOTE_FEED/feed.json" "$REMOTE_FEED/feed.alive" "$FEED/"
 rsync -a --timeout=20 --ignore-missing-args -e "$SSH" \
   "$REMOTE_MOMENTS/moments.jsonl" "$MOMENTS/"
-exec rsync -a --timeout=20 --ignore-missing-args -e "$SSH" \
+rsync -a --timeout=20 --ignore-missing-args -e "$SSH" \
   "$REMOTE_CARDS" "$PICTURES/"
+rsync -a --timeout=20 --ignore-missing-args -e "$SSH" \
+  "$REMOTE_LIBRA/moments.jsonl" "$LIBRA/" 2>/dev/null || true
+rsync -a --timeout=20 --ignore-missing-args -e "$SSH" \
+  "$REMOTE_LIBRA_CARDS" "$PICTURES/" 2>/dev/null || true
