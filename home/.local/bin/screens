@@ -1,0 +1,62 @@
+#!/bin/bash
+set -euo pipefail
+
+usage() {
+    echo "usage: screens [off|on|toggle|status]" >&2
+    exit 2
+}
+
+identifiers() {
+    printf "[%s]" "$(betterdisplaycli get -identifiers)"
+}
+
+external_tags() {
+    identifiers \
+        | jq -r '.[] | select(.deviceType == "Display" and (.registryLocation | test("dispext"))) | .tagID'
+}
+
+connected_externals() {
+    local tag
+    for tag in $(external_tags); do
+        if [ "$(betterdisplaycli get -tagID="$tag" -connected 2>/dev/null)" = "on" ]; then
+            echo "$tag"
+        fi
+    done
+}
+
+screens_off() {
+    local tag
+    for tag in $(connected_externals); do
+        betterdisplaycli set -tagID="$tag" -connected=off
+    done
+}
+
+screens_on() {
+    betterdisplaycli perform -connectAllDisplays
+}
+
+screens_status() {
+    identifiers \
+        | jq -r '.[] | select(.deviceType == "Display") | "\(.tagID)\t\(.name)"' \
+        | while IFS=$'\t' read -r tag name; do
+            printf '%-4s %-20s %s\n' "$tag" "$name" "$(betterdisplaycli get -tagID="$tag" -connected 2>/dev/null || echo on)"
+        done
+}
+
+pgrep -x BetterDisplay >/dev/null || {
+    env -i HOME="$HOME" USER="$USER" LOGNAME="$USER" SHELL=/bin/zsh TMPDIR="${TMPDIR:-/tmp}" PATH=/usr/bin:/bin:/usr/sbin:/sbin /usr/bin/open -g -a BetterDisplay
+    for _ in $(seq 1 20); do
+        betterdisplaycli get -identifiers >/dev/null 2>&1 && break
+        /bin/sleep 0.5
+    done
+}
+
+case "${1:-toggle}" in
+    off) screens_off ;;
+    on) screens_on ;;
+    status) screens_status ;;
+    toggle)
+        if [ -n "$(connected_externals)" ]; then screens_off; else screens_on; fi
+        ;;
+    *) usage ;;
+esac
