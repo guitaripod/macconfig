@@ -44,7 +44,6 @@ sync_file .config/gh/config.yml
 
 echo "Local bins:"
 sync_file .local/bin/rc-tui-feed-sync
-sync_file .local/bin/screens
 
 echo "LaunchAgents:"
 sync_file Library/LaunchAgents/digital.twisted.noTunes.autostart.plist
