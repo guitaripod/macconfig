@@ -122,6 +122,7 @@ esac
 # Claude Code
 alias cc="CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ENABLE_BACKGROUND_TASKS=1 ~/.local/bin/claude --dangerously-skip-permissions"
 alias ccc="CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 ENABLE_BACKGROUND_TASKS=1 ~/.local/bin/claude --dangerously-skip-permissions --continue"
+alias ccm="DISABLE_ERROR_REPORTING=1 DISABLE_FEEDBACK_COMMAND=1 CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY=1 CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1 ~/.local/bin/claude --permission-mode auto"
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 alias ccu="claude update"
 
