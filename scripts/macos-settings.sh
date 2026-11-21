@@ -127,6 +127,16 @@ defaults write com.apple.controlcenter "NSStatusItem Visible Battery" -bool true
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "<dict><key>enabled</key><false/></dict>"
 
 # =============================================================================
+# SCREEN SAVER AND LOCK
+# =============================================================================
+
+# Never start the screen saver, so idling never locks the screen
+defaults -currentHost write com.apple.screensaver idleTime -int 0
+
+# Never ask for the password after the screen saver or a sleeping display (asks for it once)
+sysadminctl -screenLock off -password -
+
+# =============================================================================
 # APPLY CHANGES
 # =============================================================================
 
